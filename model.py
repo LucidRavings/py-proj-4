@@ -44,8 +44,9 @@ class Project(db.Model):
 
     team_id = db.Column(db.Integer, db.ForeignKey("teams.id"), nullable = False)
 
-    def __init__(self, project_name, team_id, **kwargs):
+    def __init__(self, project_name, completed, team_id, **kwargs):
         self.project_name = project_name
+        self.completed = completed
         self.team_id = team_id
 
         if "description" in kwargs:
